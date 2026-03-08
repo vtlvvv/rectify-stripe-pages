@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Successful</title>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <h1>Thanks for your order!</h1>
+  <p>Payment complete. Order details emailed.</p>
+  <p>Session ID: <span id="session-id">Loading...</span></p>
+  <a href="/">Back to Home</a>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('session-id').textContent = urlParams.get('session_id');
+    // Optional: POST session_id to your backend for logging/verification
+  </script>
+</body>
+</html>
